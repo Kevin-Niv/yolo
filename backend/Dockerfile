@@ -1,3 +1,5 @@
+#For Building
+
 ARG NODE_VERSION=19.0.0-alpine
 
 FROM node:${NODE_VERSION} as builder
@@ -9,6 +11,8 @@ COPY package*.json ./
 RUN npm install --production
 
 COPY . .
+
+#For running Inside the container 
 
 FROM node:${NODE_VERSION} as runner
 
