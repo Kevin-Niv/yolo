@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    image: kevinkipkemei/yolo-client:v1.0.0
+    container_name: kevin-frontend
+    working_dir: /usr/src/app
+
+    networks:
+      - yolo-network
+
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+    
+    ports:
+      - "3000:3000"
+    command: npm start
+
+  backend:
+    image: kevinkipkemei/yolo-backend:v1.0.0
+    container_name: kevin-backend
+    working_dir: /usr/src/app
+
+    networks:
+      - yolo-network
+
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      - MONGODB_URI=mongodb+srv://kevinkipkemei:kevin123@ecommerce.gvqlezd.mongodb.net/yolomy?retryWrites=true&w=majority&appName=ecommerce
+
+    command: npm start
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+      
+    volumes:
+      - mongodb_data:/data/db
+
+networks:
+  yolo-network:
+    driver: bridge
