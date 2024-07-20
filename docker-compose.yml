@@ -36,7 +36,7 @@ services:
       - "5000:5000"
 
     command: npm start
-    
+
     environment:
       - MONGODB_URI=mongodb+srv://kevinkipkemei:kevin123@ecommerce.gvqlezd.mongodb.net/yolomy?retryWrites=true&w=majority&appName=ecommerce
 
@@ -47,6 +47,9 @@ services:
 
     volumes:
       - mongodb_data:/data/db
+volumes:
+  mongodb_data:
+    driver: local
 
 networks:
   yolo-network:
