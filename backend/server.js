@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,17 +7,13 @@ const upload = multer();
 
 const productRoute = require('./routes/api/productRoute');
 
-const config = require('./config');
-const dotenv = require('dotenv');
-
 // Connecting to the Database
-dotenv.config(); 
+let mongodb_url = 'mongodb://localhost/';
+let dbName = 'yolomy';
 
-const env = process.env.NODE_ENV || 'development';
-const mongodb_url = config.mongoURI[env];
-const MONGODB_URI = process.env.MONGODB_URI || mongodb_url;
-
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+// define a url to connect to the database
+const MONGODB_URI = process.env.MONGODB_URI || mongodb_url + dbName
+mongoose.connect(MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true  } )
 let db = mongoose.connection;
 
 // Check Connection
