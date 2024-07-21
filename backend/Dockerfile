@@ -2,7 +2,7 @@
 
 ARG NODE_VERSION=19.0.0-alpine
 
-FROM node:${NODE_VERSION} as builder
+FROM node:${NODE_VERSION} AS builder
 
 WORKDIR /usr/src/app
 
@@ -14,7 +14,7 @@ COPY . .
 
 #For running Inside the container 
 
-FROM node:${NODE_VERSION} as runner
+FROM node:${NODE_VERSION} AS runner
 
 WORKDIR /usr/src/app
 
