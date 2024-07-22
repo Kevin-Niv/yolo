@@ -159,9 +159,9 @@ However, when using Docker Compose, you can start all services defined in the `d
 
 ## Git Workflow
 
-Fork the repository from the original repository.
-Clone the repo: `git@github.com:Kzizah/yolo.git`
-Create a .gitignore file to exclude unnecessary files and directories from version control.
+- Fork the repository from the original repository.
+- Clone the repo: `https://github.com/Kevin-Niv/yolo`
+- Create a .gitignore file to exclude unnecessary files and directories from version control.
 Added Dockerfile for the client to the repo:
 - `git add client/Dockerfile`
 Add Dockerfile for the backend to the repo:
@@ -182,7 +182,7 @@ Deployed the containers using docker compose:
 - `docker compose up`
 
 ## Docker image tag naming standards
-used `docker image ls` to check images have tags as follows.
+Use `docker image ls` to check images have tags as follows.
   Images are tagged using this versioning (`v1.0.0`):
   - `kevinkipkemei/yolo-backend:v1.0.5`
   - `kevinkipkemei/yolo-client:v1.0.0`
