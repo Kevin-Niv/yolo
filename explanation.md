@@ -174,6 +174,8 @@ Committed the changes:
 - `git commit -m "Added docker-compose file"`
 Pushed the files to github:
 - `git push `
+
+## Docker Workflow
 Built the client and backend images:
 - `docker compose build`
 Pushed the built imags to docker registry:
