@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: kevinkipkemei/yolo-client:v1.0.0
+    container_name: kevin-frontend
+    working_dir: /usr/src/app
+
+    networks:
+      - yolo-network
+
+    volumes:
+      - ./client:/usr/src/app
+      #- /usr/src/app/node_modules
+    tty: true
+    
+    ports:
+      - "3000:3000"
+    command: npm start
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: kevinkipkemei/yolo-backend:v1.0.5
+    container_name: kevin-backend
+    working_dir: /usr/src/app
+
+    networks:
+      - yolo-network
+
+    volumes:
+      - ./backend:/usr/src/app
+      #- /usr/src/app/node_modules
+    tty: true
+
+    ports:
+      - "5000:5000"
+
+    command: npm start
+
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/yolomy
+    depends_on:
+      - mongo
+    networks:
+      - yolo-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - yolo-network
+
+volumes:
+  mongodata:
+    driver: local
+
+networks:
+  yolo-network:
+    driver: bridge
