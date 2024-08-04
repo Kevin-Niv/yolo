@@ -2,6 +2,9 @@
   become: true
   vars_files:
     - vars.yaml
+    - dest.yaml
 
   roles: 
-  
+    - test-connectivity
+    - update-packages
+    - cloning-repo-yolo
