@@ -1,0 +1,8 @@
+---
+# tasks file for cloning-repo-yolo
+- name: Clone the application-yolo repository
+  ansible.builtin.git:
+    repo: 'https://github.com/Kevin-Niv/yolo'
+    dest: "{{ cloneyolo }}"
+    version: main
+    update: yes
