@@ -1,0 +1,16 @@
+---
+# tasks file for mongodb-database
+
+- name: Run mongodb container
+  docker_container:
+    name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./app-mongo-data:/data/db
+    networks:
+      - name: yolo-network
+  tags:
+    - database
+    - backend

@@ -1,0 +1,17 @@
+---
+# tasks file for yolo-backend
+- name: Pull backend image from repository
+  docker_image:
+    name: kevinkipkemei/yolo-backend:v1.0.5
+    source: pull
+
+- name: Create Yolo Backend Container
+  docker_container:
+    name: kevin-backend
+    image: kevinkipkemei/yolo-backend:v1.0.5
+    networks:
+      - name: yolo-network
+    ports:
+      - "5000:5000"
+    command: "npm start"
+  become: yes
