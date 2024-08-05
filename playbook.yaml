@@ -8,3 +8,10 @@
     - test-connectivity
     - update-packages
     - cloning-repo-yolo
+    #- docker-engine
+    #- install-docker
+    #- start-docker
+    - install-python
+    - mongodb-database
+    - yolo-backend
+    - yolo-frontend
