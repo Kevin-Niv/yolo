@@ -229,4 +229,65 @@ Use `docker image ls` to check images have tags as follows.
 !["Images"](/images/More%20Added%20Products.png)
 
 
+## Anisble Configuration
+- Creating ANsible configuration we have to create several files to assist in configuration.
 
+ - `touch ansible.cfg`
+ - `touch hosts`
+ - `touch dest.yaml`
+ - `touch var.yaml`
+ - `touch playbook.yaml`
+
+ 1. ansible.cfg
+ - Purpose: Configuration file for Ansible.
+
+    Functionality:
+    - Defines settings and parameters for Ansible’s behavior.
+    - Configures options such as inventory file location, SSH settings, logging, and module paths.
+ 2. hosts
+ - Purpose: Inventory file for Ansible.
+
+    Functionality:
+    - Lists the servers and groups of servers where Ansible will run tasks.
+    - Defines groups of hosts and variables specific to those groups or individual hosts.
+ 3. dest.yaml
+ - Purpose: Role variable file.
+
+    Functionality:
+
+    - Contains YAML data that might be used in playbooks or roles.
+    - Often used for defining variables or configuration data required by playbooks.
+ 4. var.yaml
+ - Purpose: Variables file for Ansible.
+
+    Functionality:
+
+    - Stores variables used in Ansible playbooks or roles.
+    - Provides a way to manage and reuse variable values in a structured manner.
+ 5. playbook.yaml
+ - Purpose: Ansible playbook file.
+
+    Functionality:
+
+    - Defines a set of tasks to be executed on the managed servers.
+    - Specifies which hosts the tasks should run on, what tasks to perform, and in what order.
+
+### Roles Directory
+In Ansible, the Roles directory is a structured way to organize and reuse tasks, variables, files, templates, and handlers across playbooks. The roles directory promotes modularity and reusability in your Ansible configurations.
+
+- We are focusing on the `task file` as this is where we are working from.
+    - Contains the tasks that the role will perform.
+    - Tasks are the actions that the role will execute, such as installing packages or configuring services.
+
+    #### Roles defined in our task file.
+    `roles:` 
+    - `test-connectivity`
+    - `update-packages`
+    - `cloning-repo-yolo`
+    - `docker-engine`
+    - `install-docker`
+    - `start-docker`
+    - `install-python`
+    - `mongodb-database`
+    - `yolo-backend`
+    - `yolo-frontend`
