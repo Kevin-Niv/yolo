@@ -1,0 +1,6 @@
+---
+# tasks file for install-docker
+- name: Install Docker
+  pip:
+    name: docker
+    state: present

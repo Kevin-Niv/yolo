@@ -1,6 +1,4 @@
----
 # tasks file for mongodb-database
-
 - name: Run mongodb container
   docker_container:
     name: mongo
@@ -11,6 +9,3 @@
       - ./app-mongo-data:/data/db
     networks:
       - name: yolo-network
-  tags:
-    - database
-    - backend
