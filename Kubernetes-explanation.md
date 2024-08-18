@@ -34,8 +34,33 @@ This document explains the process of deploying an application from a local Mini
 
 Once all this is set up navigate to your working directory in my case I will navigate to `/home/kevin/devops/IP2/yolo`.
 
-    - Create three directories
+    - Create directory
+ - `mkdir manifests`
+
+ Then add the below files inside: 
+
+    - Create three files
  - `touch backend-deployment.yaml`
  - `touch frontend-deployment.yaml`
  - `touch mongodb-deployment.yaml`
 
+
+Update the files with the deployment content including the service for you to be able to access it over the internet
+
+    - Execute the below comands
+- `kubectl apply -f backend-deployment.yaml`
+- `kubectl apply -f frontend-deployment.yaml`
+- `kubectl apply -f mongodb-deployment.yaml`
+
+This will create `pods`
+
+    - To view if pods and services have been created execute the below command.
+- `kubectl get pods`
+- `kubectl get services`
+
+    - Incase of an Error run the below command with the deployment name. This will show `logs` or show more infomation about the `pod` created
+- `kubectl logs`
+- `kubectl describe`
+
+    -   Example
+- `kubectl logs frontend-deployment`
