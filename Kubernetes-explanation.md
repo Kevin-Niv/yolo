@@ -134,5 +134,19 @@ This will create `pods`
 
 ### Deploy the Application
 1. Apply Kubernetes Manifests
-    - Ensure your manifest files (YAML) are correctly set up. These files should define deployments, services, and any other required Kubernetes resources.
+    - Ensure your manifest files (YAML) are correctly set up. These files should define deployments, services,statefulsets and any other required Kubernetes resources.
     
+- `kubectl apply -f mongodb-deployment.yaml`
+- `kubectl apply -f backend-deployment.yaml`
+- `kubectl apply -f frontend-deployment.yaml`
+
+    - This will deploy the application:
+        - MongoDB StatefulSet: For database persistence.
+        - Backend Deployment: The backend service connected to MongoDB.
+        - Frontend Deployment: The frontend service exposing port 3000.
+
+### Verify Deployment
+1. Check Pods
+    - Verify that all pods are running correctly:
+- `kubectl get pods`
+
