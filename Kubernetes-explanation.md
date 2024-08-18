@@ -109,3 +109,30 @@ This will create `pods`
 
     -   To provides detailed information about your gcloud configuration, including the current project and active account.
 - `gcloud info`  
+
+## Steps to Deploy 
+
+### Prepare the Environment
+1. Log in to Google Cloud
+- `gcloud auth login`
+
+2. Set the Project
+- `gcloud config set project [PROJECT_ID]`
+    -   Example in my case - `gcloud config set project kevin-yolo`
+
+3. Enable Required APIs
+- `gcloud services enable container.googleapis.com`
+
+### Create a Kubernetes Cluster
+1. Create the Cluster
+- `gcloud container clusters create [CLUSTER_NAME] --zone [ZONE] --num-nodes=3`
+    - Example - `gcloud container clusters create my-cluster --zone us-central1-c --num-nodes=3`
+
+2. Get Cluster Credentials
+- `gcloud container clusters get-credentials [CLUSTER_NAME] --zone [ZONE]`
+    - Example - `gcloud container clusters get-credentials my-cluster --zone us-central1-c`
+
+### Deploy the Application
+1. Apply Kubernetes Manifests
+    - Ensure your manifest files (YAML) are correctly set up. These files should define deployments, services, and any other required Kubernetes resources.
+    
