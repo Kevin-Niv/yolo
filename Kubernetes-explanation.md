@@ -164,8 +164,18 @@ This will create `pods`
 
 !["check nodes"](/images/get-nodes.png)
 
-### Access the Application
+### Accessing the Application
+
     - We access the frontend service using the external IP and port provided by the service.
 
     - http://34.170.199.139:3000/
 
+
+### YOLO External Link
+
+1. [Frontend application Endpoint/External IP ](http://34.170.199.139:3000/)
+
+#### Application Page from the External IP
+1. Application Homepage
+
+!["Web Application from External_IP](/images/YoloMy-extIP.png)
