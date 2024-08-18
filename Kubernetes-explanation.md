@@ -33,3 +33,9 @@ This document explains the process of deploying an application from a local Mini
   - `sudo snap install kubectl --classic`
 
 Once all this is set up navigate to your working directory in my case I will navigate to `/home/kevin/devops/IP2/yolo`.
+
+    - Create three directories
+ - `touch backend-deployment.yaml`
+ - `touch frontend-deployment.yaml`
+ - `touch mongodb-deployment.yaml`
+
