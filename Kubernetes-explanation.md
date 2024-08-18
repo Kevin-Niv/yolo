@@ -179,3 +179,22 @@ This will create `pods`
 1. Application Homepage
 
 !["Web Application from External_IP](/images/YoloMy-extIP.png)
+
+
+### Troubleshooting
+1. Pods Not Running
+    - If a pod is not running or is in a CrashLoopBackOff state, check logs:
+- `kubectl logs [POD_NAME]`
+
+    - Inspect the pod description for detailed error information:
+- `kubectl describe pod [POD_NAME]`
+
+## Conclusion
+
+Following these steps, you should have successfully deployed your application from a local Minikube environment to Google Cloud Kubernetes Engine. This setup provides scalability and management benefits by leveraging Google Cloud’s Kubernetes infrastructure.
+
+### LInks to Refer
+
+- [Google Kubernetes Engine Documentation](https://cloud.google.com/kubernetes-engine/docs)
+
+- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
