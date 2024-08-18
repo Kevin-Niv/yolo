@@ -1,25 +1,23 @@
-ARG NODE_VERSION=19.0.0-alpine
+FROM node:16-alpine AS builder
 
-FROM node:${NODE_VERSION} as builder
+WORKDIR /app
 
-WORKDIR /usr/src/app
+COPY package*.json ./
 
-ENV NODE_OPTIONS=--openssl-legacy-provider
-
-COPY package.json package-lock.json ./
-
-RUN npm install --production
+RUN npm ci
 
 COPY . .
 
 RUN npm run build
 
-FROM node:${NODE_VERSION} as runner
+FROM node:16-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-ENV NODE_OPTIONS=--openssl-legacy-provider
+RUN npm install -g serve
 
-COPY --from=builder /usr/src/app/package.json ./
-COPY --from=builder /usr/src/app/build ./build
-COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /app/build /app/build
+
+EXPOSE 3000
+
+CMD ["serve","-s","build"]
