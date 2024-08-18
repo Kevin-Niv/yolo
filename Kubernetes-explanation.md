@@ -64,3 +64,48 @@ This will create `pods`
 
     -   Example
 - `kubectl logs frontend-deployment`
+
+### Download and Install Google Cloud SDK
+
+    - Update and Install Dependencies
+- `sudo apt-get update`
+- `sudo apt-get install -y curl python3`
+
+    - Download the Google Cloud SDK
+- `curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-488.0.0-linux-x86_64.tar.gz`
+
+    - Extract the Archive
+- `tar -xf google-cloud-sdk-488.0.0-linux-x86_64.tar.gz`
+
+    - Run the Installation Script
+- `./google-cloud-sdk/install.sh`
+    - You will be prompted to modify your profile to include the Cloud SDK path. Confirm the prompts to update your profile.
+
+    - Initialize the SDK
+- `./google-cloud-sdk/bin/gcloud init`
+
+### Configure Google Cloud SDK
+
+1. Log In to Your Google Cloud Account
+
+- `gcloud auth login`    
+    - Follow the instructions to log in to your Google account via the web browser.
+
+2. Set the Default Project
+
+- `gcloud config set project [YOUR_PROJECT_ID]`
+     - Replace [YOUR_PROJECT_ID] with the ID of your Google Cloud project.
+     Example: `gcloud config set project kevin-yolo`
+
+3. Set the Default Compute Region and Zone
+- `gcloud config set compute/region [YOUR_REGION]`
+- `gcloud config set compute/zone [YOUR_ZONE]`
+    - Replace [YOUR_REGION] and [YOUR_ZONE] with your preferred region and zone, respectively.
+
+### Verify Installation
+
+    - To verify that the installation and configuration were successful, you can run:
+- `gcloud --version`
+
+    -   To provides detailed information about your gcloud configuration, including the current project and active account.
+- `gcloud info`  
