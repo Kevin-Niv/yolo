@@ -150,3 +150,22 @@ This will create `pods`
     - Verify that all pods are running correctly:
 - `kubectl get pods`
 
+!["check pods"](/images/check-pods.png)
+
+2. Check Services
+    - Ensure that the services are created and exposed correctly:
+- `kubectl get services`
+
+!["check services"](/images/check-services.png)
+
+3. Check nodes
+    - Check and verify 3 nodes are there.
+- `kubectl get nodes`
+
+!["check nodes"](/images/get-nodes.png)
+
+### Access the Application
+    - We access the frontend service using the external IP and port provided by the service.
+
+    - http://34.170.199.139:3000/
+
