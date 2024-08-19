@@ -2,8 +2,8 @@
 ## Deployment Explanation
 ## External IP To Access the Application
 
-    http://34.170.199.139:3000/
-    
+[Frontend application Endpoint/External IP ](http://34.170.199.139:3000/)
+
 ## Overview
 
 This document explains the process of deploying an application from a local Minikube environment to Google Cloud Kubernetes Engine (GKE). The application consists of a backend service connected to a MongoDB database and a frontend service.
