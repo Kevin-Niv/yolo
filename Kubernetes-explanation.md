@@ -12,11 +12,12 @@ This document explains the process of deploying an application from a local Mini
     - Minikube: Installed and running on your local machine.
 
 ### Installing Minikube
-- For Linux users
-     - curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-     - sudo install minikube-linux-amd64 /usr/local/bin/minikube
+ For Linux users
 
-- To confirm if minikube is installed succesfully, run the following command
+    - curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    - sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+To confirm if minikube is installed succesfully, run the following command
    - `minikube version`
 
 - Expected output
