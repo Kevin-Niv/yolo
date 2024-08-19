@@ -235,6 +235,10 @@ We access the frontend service using the external IP and port provided by the se
 
 !["Web Application from External_IP](/images/YoloMy-extIP.png)
 
+2. Add Products Image
+
+!["Adding Products"](/images/Add-products-Yolo.png)
+
 
 ### Troubleshooting
 1.Pods Not Running
