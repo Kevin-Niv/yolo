@@ -18,15 +18,19 @@ This document explains the process of deploying an application from a local Mini
     - sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 To confirm if minikube is installed succesfully, run the following command
+
     - minikube version
 
 Expected output
+
     - minikube version: v1.33.1
 
 To Start Minikube
+
     - minikube start
 
 Check if minikube is running
+
     - minikube status
 
 ### Installing Kubectl
