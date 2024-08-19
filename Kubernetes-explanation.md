@@ -33,6 +33,10 @@ Check if minikube is running
 
      minikube status
 
+To stop minikube
+
+    minikube stop
+
 ### Installing Kubectl
 Run this command
      
@@ -47,10 +51,11 @@ Create directory
  Then add the below files inside: 
 
 Create three files
+Use this commands below:
 
- - `touch backend-deployment.yaml`
- - `touch frontend-deployment.yaml`
- - `touch mongodb-deployment.yaml`
+    touch backend-deployment.yaml
+    touch frontend-deployment.yaml
+    touch mongodb-deployment.yaml
 
 
 Update the files with the deployment content including the service for you to be able to access it over the internet
@@ -63,79 +68,104 @@ Execute the below comands
 
 This will create `pods`
 
-    - To view if pods and services have been created execute the below command.
-- `kubectl get pods`
-- `kubectl get services`
+To view if pods and services have been created execute the below command.
 
-    - Incase of an Error run the below command with the deployment name. This will show `logs` or show more infomation about the `pod` created
-- `kubectl logs`
-- `kubectl describe`
+    kubectl get pods
+    kubectl get services
 
-    -   Example
-- `kubectl logs frontend-deployment`
+Incase of an Error run the below command with the deployment name. This will show `logs` or show more infomation about the `pod` created
+
+    kubectl logs
+    kubectl describe
+
+Example
+    
+    kubectl logs frontend-deployment
 
 ### Download and Install Google Cloud SDK
 
-    - Update and Install Dependencies
-- `sudo apt-get update`
-- `sudo apt-get install -y curl python3`
+Update and Install Dependencies
 
-    - Download the Google Cloud SDK
-- `curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-488.0.0-linux-x86_64.tar.gz`
+    sudo apt-get update
+    sudo apt-get install -y curl python3
 
-    - Extract the Archive
-- `tar -xf google-cloud-sdk-488.0.0-linux-x86_64.tar.gz`
+Download the Google Cloud SDK
 
-    - Run the Installation Script
-- `./google-cloud-sdk/install.sh`
-    - You will be prompted to modify your profile to include the Cloud SDK path. Confirm the prompts to update your profile.
+    curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-488.0.0-linux-x86_64.tar.gz
 
-    - Initialize the SDK
-- `./google-cloud-sdk/bin/gcloud init`
+Extract the Archive
+
+    tar -xf google-cloud-sdk-488.0.0-linux-x86_64.tar.gz
+
+Run the Installation Script
+
+    ./google-cloud-sdk/install.sh
+
+You will be prompted to modify your profile to include the Cloud SDK path. Confirm the prompts to update your profile.
+
+Initialize the SDK
+
+    ./google-cloud-sdk/bin/gcloud init
 
 ### Configure Google Cloud SDK
 
 1. Log In to Your Google Cloud Account
 
-- `gcloud auth login`    
-    - Follow the instructions to log in to your Google account via the web browser.
+    gcloud auth login
+
+Follow the instructions to log in to your Google account via the web browser.
 
 2. Set the Default Project
 
-- `gcloud config set project [YOUR_PROJECT_ID]`
-     - Replace [YOUR_PROJECT_ID] with the ID of your Google Cloud project.
-     Example: `gcloud config set project kevin-yolo`
+    gcloud config set project [YOUR_PROJECT_ID]
+    
+Replace [YOUR_PROJECT_ID] with the ID of your Google Cloud project.
+    
+    Example: `gcloud config set project kevin-yolo`
 
 3. Set the Default Compute Region and Zone
-- `gcloud config set compute/region [YOUR_REGION]`
-- `gcloud config set compute/zone [YOUR_ZONE]`
-    - Replace [YOUR_REGION] and [YOUR_ZONE] with your preferred region and zone, respectively.
+    
+    gcloud config set compute/region [YOUR_REGION]
+    gcloud config set compute/zone [YOUR_ZONE]
+    
+Replace [YOUR_REGION] and [YOUR_ZONE] with your preferred region and zone, respectively.
 
 ### Verify Installation
 
-    - To verify that the installation and configuration were successful, you can run:
-- `gcloud --version`
+To verify that the installation and configuration were successful, you can run:
 
-    -   To provides detailed information about your gcloud configuration, including the current project and active account.
-- `gcloud info`  
+    gcloud --version
+
+To provides detailed information about your gcloud configuration, including the current project and active account.
+
+    gcloud info
 
 ## Steps to Deploy 
 
 ### Prepare the Environment
 1. Log in to Google Cloud
-- `gcloud auth login`
+
+    gcloud auth login
 
 2. Set the Project
-- `gcloud config set project [PROJECT_ID]`
-    -   Example in my case - `gcloud config set project kevin-yolo`
+
+    gcloud config set project [PROJECT_ID]
+Example in my case :-
+
+    gcloud config set project kevin-yolo
 
 3. Enable Required APIs
-- `gcloud services enable container.googleapis.com`
+
+    gcloud services enable container.googleapis.com
 
 ### Create a Kubernetes Cluster
 1. Create the Cluster
-- `gcloud container clusters create [CLUSTER_NAME] --zone [ZONE] --num-nodes=3`
-    - Example - `gcloud container clusters create my-cluster --zone us-central1-c --num-nodes=3`
+
+    gcloud container clusters create [CLUSTER_NAME] --zone [ZONE] --num-nodes=3
+
+Example :- 
+    
+    gcloud container clusters create my-cluster --zone us-central1-c --num-nodes=3
 
 2. Get Cluster Credentials
 - `gcloud container clusters get-credentials [CLUSTER_NAME] --zone [ZONE]`
