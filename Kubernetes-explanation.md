@@ -12,20 +12,20 @@ This document explains the process of deploying an application from a local Mini
     - Minikube: Installed and running on your local machine.
 
 ### Installing Minikube
-     - For Linux users
-   - `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
-   - `sudo install minikube-linux-amd64 /usr/local/bin/minikube`
+- For Linux users
+     - `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
+     - `sudo install minikube-linux-amd64 /usr/local/bin/minikube`
 
-    - To confirm if minikube is installed succesfully, run the following command
+- To confirm if minikube is installed succesfully, run the following command
    - `minikube version`
 
-    - Expected output
+- Expected output
    - `minikube version: v1.33.1`
 
-    - To Start Minikube
+- To Start Minikube
    - `minikube start`
 
-    - Check if minikube is running
+- Check if minikube is running
    - `minikube status`
 
 ### Installing Kubectl
@@ -148,7 +148,7 @@ This will create `pods`
 ### Verify Deployment
 1. Check Pods
     - Verify that all pods are running correctly:
-- `kubectl get pods`
+    - `kubectl get pods`
 
 !["check pods"](/images/check-pods.png)
 
