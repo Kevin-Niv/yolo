@@ -5,11 +5,11 @@
 This document explains the process of deploying an application from a local Minikube environment to Google Cloud Kubernetes Engine (GKE). The application consists of a backend service connected to a MongoDB database and a frontend service.
 
 ## Prerequisites
-    - Google Cloud Account: Ensure you have an active Google Cloud account if not signin or signup.
-    - Billing Enabled: Billing must be enabled on your Google Cloud project.
-    - Google Cloud SDK: Installed and configured on your local machine.
-    - Kubectl: Installed and configured on your local machine.
-    - Minikube: Installed and running on your local machine.
+- Google Cloud Account: Ensure you have an active Google Cloud account if not signin or signup.
+- Billing Enabled: Billing must be enabled on your Google Cloud project.
+- Google Cloud SDK: Installed and configured on your local machine.
+- Kubectl: Installed and configured on your local machine.
+- Minikube: Installed and running on your local machine.
 
 ### Installing Minikube
  For Linux users
@@ -18,16 +18,16 @@ This document explains the process of deploying an application from a local Mini
     - sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 To confirm if minikube is installed succesfully, run the following command
-   - `minikube version`
+    - `minikube version`
 
-- Expected output
-   - `minikube version: v1.33.1`
+Expected output
+    - `minikube version: v1.33.1`
 
-- To Start Minikube
-   - `minikube start`
+To Start Minikube
+    - `minikube start`
 
-- Check if minikube is running
-   - `minikube status`
+Check if minikube is running
+    - `minikube status`
 
 ### Installing Kubectl
     - Run this command
