@@ -19,32 +19,35 @@ This document explains the process of deploying an application from a local Mini
 
 To confirm if minikube is installed succesfully, run the following command
 
-    - minikube version
+     minikube version
 
 Expected output
 
-    - minikube version: v1.33.1
+     minikube version: v1.33.1
 
 To Start Minikube
 
-    - minikube start
+     minikube start
 
 Check if minikube is running
 
-    - minikube status
+     minikube status
 
 ### Installing Kubectl
-    - Run this command
-  - `sudo snap install kubectl --classic`
+Run this command
+     
+     sudo snap install kubectl --classic
 
 Once all this is set up navigate to your working directory in my case I will navigate to `/home/kevin/devops/IP2/yolo`.
 
-    - Create directory
- - `mkdir manifests`
+Create directory
+    
+    mkdir manifests
 
  Then add the below files inside: 
 
-    - Create three files
+Create three files
+
  - `touch backend-deployment.yaml`
  - `touch frontend-deployment.yaml`
  - `touch mongodb-deployment.yaml`
@@ -52,10 +55,11 @@ Once all this is set up navigate to your working directory in my case I will nav
 
 Update the files with the deployment content including the service for you to be able to access it over the internet
 
-    - Execute the below comands
-- `kubectl apply -f backend-deployment.yaml`
-- `kubectl apply -f frontend-deployment.yaml`
-- `kubectl apply -f mongodb-deployment.yaml`
+Execute the below comands
+
+    kubectl apply -f backend-deployment.yaml
+    kubectl apply -f frontend-deployment.yaml
+    kubectl apply -f mongodb-deployment.yaml
 
 This will create `pods`
 
