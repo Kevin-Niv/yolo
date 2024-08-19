@@ -14,8 +14,8 @@ This document explains the process of deploying an application from a local Mini
 ### Installing Minikube
  For Linux users
 
-    - curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-    - sudo install minikube-linux-amd64 /usr/local/bin/minikube
+     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+     sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 To confirm if minikube is installed succesfully, run the following command
 
